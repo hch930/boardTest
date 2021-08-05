@@ -16,7 +16,6 @@ import com.hch.auth.domain.entity.MemberEntity;
 @Transactional
 @Rollback(false)
 public class MemberRepositoryTest {
-	
 	@Autowired
 	MemberRepository memberRepository;
 	
