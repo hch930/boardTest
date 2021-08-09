@@ -1,7 +1,5 @@
 package com.hch.auth.service;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,30 +24,30 @@ public class MemberServiceTest {
 		 return user.getUsername();
 	}
 
+/*
 	@Test
-	public void loadUserByUsername(){
+	public void register(){
 		MemberDto memberDto = MemberDto.builder()
 				.name("홍충현")
 				.email("ruma97@naver.com")
 				.username("hch500")
 				.password("cndgus97")
 				.build();
-		
-		memberService.register(memberDto);
-		if(currentUserName().equals(memberDto.getUsername())) {
-			System.out.println("아이디가 있습니다.");
-		}else {
-			memberService.loadUserByUsername(memberDto.getUsername());
-		}
-		
-//		MemberEntity save = memberRepository.save(memberEntity);
+	
+		memberService.register(memberDto);		
+	}
+*/	
+	@Test
+	public void loadUserByUsername() {
+//		MemberDto memberDto = MemberDto.builder()
+//				.name("홍충현")
+//				.email("ruma97@naver.com")
+//				.username("hch500")
+//				.password("cndgus97")
+//				.build();
 //		
-//		assertNotNull(save.getName());
-//		assertNotNull(save.getEmail());
-//		assertNotNull(save.getUsername());
-//		assertNotNull(save.getPassword());
-//		assertNotNull(save.getCreatedDate());
+//		memberService.register(memberDto);
 		
-		
+		memberService.loadUserByUsername("hch50000");
 	}
 }
