@@ -10,11 +10,13 @@ spring:
     open-in-view: false
     properties:
       hibernate:
+        show_sql: true
         format_sql: true
     generate-ddl: true
     
 logging:
   level:
+    root: INFO
     org:
       hibernate:
         SQL: DEBUG
@@ -22,4 +24,8 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+  file:
+    path: logs
+              
+
         
