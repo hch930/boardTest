@@ -4,7 +4,11 @@ spring:
     username: root
     password: cndgus97
     driver-class-name: org.mariadb.jdbc.Driver
-
+  
+  devtools:
+    livereload:
+      enabled: true
+      
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
@@ -14,11 +18,18 @@ spring:
         format_sql: true
     generate-ddl: true
     
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    
 logging:
+  pattern:
+    console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
   level:
     root: INFO
     org:
-      hibernate:
+      hibernate:  
         SQL: DEBUG
         type:
           descriptor:
@@ -27,5 +38,19 @@ logging:
   file:
     path: logs
               
-
+---
+spring:
+  profiles: dev
+logging:
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+  logback:
+    rollingpolicy:
+      file-name-pattern: "/logs/abc.%d{yyyy-MM-dd}.%i"
+  file:
+    name: /logs/abc.log
+    max-history: 30
+  level:
+    org:
+      springframework: INFO
         

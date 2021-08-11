@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		//static 디렉터리 하위 파일 목록은 항상 통과(인증x)
-		web.ignoring().antMatchers("/css/**", "/js/**", "/img/**");
+		web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/vendor/**", "/scss/**");
 	}
 
 	//HttpSecurity를 통해 HTTP 요청에 대한 웹 기반 보안을 구성
