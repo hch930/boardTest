@@ -1,0 +1,68 @@
+2021-08-17 13:45:48.196  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : Starting BoardTestApplication using Java 1.8.0_281 on DESKTOP-4KFLA75 with PID 8364 (C:\Users\hch\git\boardTest\boardTest\bin\main started by hch in C:\Users\hch\git\boardTest\boardTest)
+2021-08-17 13:45:48.201  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : No active profile set, falling back to default profiles: default
+2021-08-17 13:45:48.254  WARN 8364 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 46:13]
+2021-08-17 13:45:48.255  INFO 8364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-17 13:45:48.255  INFO 8364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-17 13:45:48.927  INFO 8364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 13:45:48.966  INFO 8364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
+2021-08-17 13:45:49.412  INFO 8364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-17 13:45:49.421  INFO 8364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-17 13:45:49.421  INFO 8364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-17 13:45:49.484  INFO 8364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-17 13:45:49.484  INFO 8364 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1228 ms
+2021-08-17 13:45:49.553  INFO 8364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-17 13:45:49.585  INFO 8364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-17 13:45:49.644  INFO 8364 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-17 13:45:49.674  INFO 8364 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-17 13:45:49.766  INFO 8364 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-17 13:45:49.863  INFO 8364 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-17 13:45:50.277  INFO 8364 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 13:45:50.284  INFO 8364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-17 13:45:50.578  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/css/**'] with []
+2021-08-17 13:45:50.578  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-08-17 13:45:50.578  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/img/**'] with []
+2021-08-17 13:45:50.578  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/vendor/**'] with []
+2021-08-17 13:45:50.578  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/scss/**'] with []
+2021-08-17 13:45:50.598  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a5029d8, org.springframework.security.web.context.SecurityContextPersistenceFilter@3eab7575, org.springframework.security.web.header.HeaderWriterFilter@51ce9bf7, org.springframework.security.web.csrf.CsrfFilter@10266e42, org.springframework.security.web.authentication.logout.LogoutFilter@243de425, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c817275, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3257fc1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ebb3816, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f13f4cb, org.springframework.security.web.session.SessionManagementFilter@3146713f, org.springframework.security.web.access.ExceptionTranslationFilter@57c3cb8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13a73e35]
+2021-08-17 13:45:51.408  INFO 8364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-17 13:45:51.468  INFO 8364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-17 13:45:51.475  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : Started BoardTestApplication in 3.684 seconds (JVM running for 4.502)
+2021-08-17 13:45:51.543  INFO 8364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-17 13:45:51.543  INFO 8364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-17 13:45:51.544  INFO 8364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-17 13:46:18.584  INFO 8364 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-17 13:46:18.586  INFO 8364 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-17 13:46:18.590  INFO 8364 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-17 13:46:18.758  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : Starting BoardTestApplication using Java 1.8.0_281 on DESKTOP-4KFLA75 with PID 8364 (C:\Users\hch\git\boardTest\boardTest\bin\main started by hch in C:\Users\hch\git\boardTest\boardTest)
+2021-08-17 13:46:18.758  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : No active profile set, falling back to default profiles: default
+2021-08-17 13:46:18.761  WARN 8364 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 46:13]
+2021-08-17 13:46:18.919  INFO 8364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-17 13:46:18.932  INFO 8364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interfaces.
+2021-08-17 13:46:19.034  INFO 8364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-17 13:46:19.034  INFO 8364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-17 13:46:19.034  INFO 8364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-17 13:46:19.055  INFO 8364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-17 13:46:19.056  INFO 8364 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 295 ms
+2021-08-17 13:46:19.077  INFO 8364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-17 13:46:19.079  INFO 8364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-17 13:46:19.084  INFO 8364 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-17 13:46:19.088  INFO 8364 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-17 13:46:19.112  INFO 8364 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-17 13:46:19.112  INFO 8364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-17 13:46:19.165  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/css/**'] with []
+2021-08-17 13:46:19.165  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-08-17 13:46:19.165  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/img/**'] with []
+2021-08-17 13:46:19.165  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/vendor/**'] with []
+2021-08-17 13:46:19.165  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/scss/**'] with []
+2021-08-17 13:46:19.170  INFO 8364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@735fa2f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@30a37094, org.springframework.security.web.header.HeaderWriterFilter@2238421c, org.springframework.security.web.csrf.CsrfFilter@dc995c3, org.springframework.security.web.authentication.logout.LogoutFilter@74260056, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38b70907, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@629d1cee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d59a03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f4fa34b, org.springframework.security.web.session.SessionManagementFilter@710584fa, org.springframework.security.web.access.ExceptionTranslationFilter@285f4668, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f90a508]
+2021-08-17 13:46:19.233  INFO 8364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-17 13:46:19.240  INFO 8364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-17 13:46:19.243  INFO 8364 --- [restartedMain] com.hch.BoardTestApplication             : Started BoardTestApplication in 0.518 seconds (JVM running for 32.272)
+2021-08-17 13:46:19.244  INFO 8364 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-17 13:46:19.506  INFO 8364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-17 13:46:19.507  INFO 8364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-17 13:46:19.508  INFO 8364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-17 18:12:57.680  INFO 8364 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-08-17 18:12:57.737  INFO 8364 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-17 18:12:57.737  INFO 8364 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-08-17 18:12:57.737  INFO 8364 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

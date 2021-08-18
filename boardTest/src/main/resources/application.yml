@@ -8,7 +8,15 @@ spring:
   devtools:
     livereload:
       enabled: true
-      
+  
+  freemarker:
+    cache: false 
+  
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+       
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
@@ -17,12 +25,7 @@ spring:
         show_sql: true
         format_sql: true
     generate-ddl: true
-    
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
-    cache: false
-    
+   
 logging:
   pattern:
     console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
