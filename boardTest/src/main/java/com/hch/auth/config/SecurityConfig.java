@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/**").permitAll()
 			.and()
 				//로그인 설정
-				.formLogin().disable()
+				.formLogin()
 			.and()
 				//로그아웃 설정
 				.logout()

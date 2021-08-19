@@ -53,18 +53,18 @@ public class MemberService implements UserDetailsService{
 		}
 	}
 	
- 	@Transactional(readOnly = true)
-    public Optional<MemberEntity> getMemberInfo(String username) {
-        return memberRepository.findByUsername(username);
-                .map(MemberDto::of)
-                .orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));
-    }
-
-	// 현재 SecurityContext 에 있는 유저 정보 가져오기
-    @Transactional(readOnly = true)
-    public MemberDto getMyInfo() {
-        return memberRepository.findById(SecurityUtil.getCurrentMemberId())
-                .map(MemberDto::of)
-                .orElseThrow(() -> new RuntimeException("로그인 유저 정보가 없습니다."));
-    }
+// 	@Transactional(readOnly = true)
+//    public Optional<MemberEntity> getMemberInfo(String username) {
+//        return memberRepository.findByUsername(username);
+//                .map(MemberDto::of)
+//                .orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));
+//    }
+//
+//	// 현재 SecurityContext 에 있는 유저 정보 가져오기
+//    @Transactional(readOnly = true)
+//    public MemberDto getMyInfo() {
+//        return memberRepository.findById(SecurityUtil.getCurrentMemberId())
+//                .map(MemberDto::of)
+//                .orElseThrow(() -> new RuntimeException("로그인 유저 정보가 없습니다."));
+//    }
 }

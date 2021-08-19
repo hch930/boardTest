@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: cndgus97
+    url: ENC(L/QQMCQXCwG+FUtoyzpD67L97za9hODUpbqZaK+WDNooF0PTMWh1loAiSAurWm4K3svCQSPF2f+AveO7hgpmhfZgdhoqFWkUSU1Gk6pr5Ao7ArfG5PPTTQ==)
+    username: ENC(sTs67NhfVVWKPQxy+EafLQ==)
+    password: ENC(aUG1Tnf7Mk8GTxgzX43EAlBVQn7U+R8A)
     driver-class-name: org.mariadb.jdbc.Driver
   
   devtools:
@@ -40,7 +40,10 @@ logging:
               BasicBinder: TRACE
   file:
     path: logs
-              
+    
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor          
 ---
 spring:
   profiles: dev
