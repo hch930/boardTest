@@ -1,4 +1,4 @@
-package com.hch.common.config;
+package com.hch.jwt.config;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
@@ -13,6 +13,7 @@ public class JasyptConfig {
 		String key = "qkdlfjtm!97";
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
+       
         config.setPassword(key); // 암호화할 때 사용하는 키
         config.setAlgorithm("PBEWithMD5AndDES"); // 암호화 알고리즘
         config.setKeyObtentionIterations("1000"); // 반복할 해싱 회수
@@ -21,6 +22,7 @@ public class JasyptConfig {
         config.setSaltGeneratorClassName("org.jasypt.salt.RandomSaltGenerator"); // salt 생성 클래스
         config.setStringOutputType("base64"); //인코딩 방식
         encryptor.setConfig(config);
+        
         return encryptor;
 	}
 }
