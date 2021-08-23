@@ -44,6 +44,10 @@ logging:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor          
+jwt:
+  header: Authorization
+  secret: ENC(7VmCyb0XZtqSidRG2No/SBETuIAtlxUXVDJnxZcEIcvmePOhzBe08niDgcGGoGNNTrrkdOYqBQnRoj3c1LiFSWAvku3K336t)
+  token-validity-in-seconds: 86400
 ---
 spring:
   profiles: dev

@@ -16,10 +16,12 @@ class BoardTestApplicationTests {
         String url = "jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=UTC";
         String username = "root";
         String password = "cndgus97";
+        String secret = "spring-boot-spring-security-boardtest-hch930-jwt-secret-key";
 
         System.out.println("url: " + jasyptEncoding(url));
         System.out.println("username: " + jasyptEncoding(username));
         System.out.println("password: " + jasyptEncoding(password));
+        System.out.println("secret: " + jasyptEncoding(secret));
     }
 
     public String jasyptEncoding(String value) {
