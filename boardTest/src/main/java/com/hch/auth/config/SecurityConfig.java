@@ -3,20 +3,37 @@ package com.hch.auth.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import com.hch.jwt.JwtAccessDeniedHandler;
+import com.hch.jwt.JwtAuthenticationEntryPoint;
+import com.hch.jwt.JwtSecurityConfig;
+import com.hch.jwt.TokenProvider;
 
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	private final TokenProvider tokenProvider;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
+	
+	public SecurityConfig(TokenProvider tokenProvider, JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
+			JwtAccessDeniedHandler jwtAccessDeniedHandler) {
+		this.tokenProvider = tokenProvider;
+        this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
+        this.jwtAccessDeniedHandler = jwtAccessDeniedHandler;
+	}
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -35,19 +52,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				//페이지 권한 설정
-				.antMatchers("/**").permitAll()
+				.antMatchers("/api/hello").permitAll()
+				.antMatchers("/api/authenticate").permitAll()
+				.antMatchers("/api/signup").permitAll()
+				.anyRequest().authenticated()
 			.and()
-				//로그인 설정
-				.formLogin()
-			.and()
-				//로그아웃 설정
-				.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout"))
-				.logoutSuccessUrl("/layout/index")
-				.invalidateHttpSession(true)
-			.and()
-				//오류 예외처리 핸들링
-				.exceptionHandling().accessDeniedPage("/auth/denied");
+				.csrf().disable()
+				//예외처리
+				.exceptionHandling()
+	            .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+	            .accessDeniedHandler(jwtAccessDeniedHandler)
+	        .and()
+	        	.headers()
+	        	.frameOptions()
+	        	.sameOrigin()
+	        .and()
+	        	//세션 설정
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+                .apply(new JwtSecurityConfig(tokenProvider));
 	}
 
 	// AuthenticationManagerBuilder를 통해 AuthenticationManager를 생성하여 모든 인증을 처리

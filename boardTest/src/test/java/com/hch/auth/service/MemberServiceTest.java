@@ -47,7 +47,5 @@ public class MemberServiceTest {
 //				.build();
 //		
 //		memberService.register(memberDto);
-		
-		memberService.loadUserByUsername("hch50000");
 	}
 }

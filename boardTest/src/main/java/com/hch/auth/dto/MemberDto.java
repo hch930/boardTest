@@ -4,6 +4,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hch.auth.domain.entity.MemberEntity;
 import com.sun.istack.NotNull;
 
@@ -35,6 +36,7 @@ public class MemberDto{
 	@Size(min = 1, max = 15)
 	private String username;
 	
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@NotNull
 	@Size(min = 1, max = 100)
 	private String password;

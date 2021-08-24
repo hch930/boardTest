@@ -2,10 +2,15 @@ package com.hch.auth.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.hch.auth.domain.role.Role;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -18,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "tbl_member")
 public class MemberEntity extends BaseEntity{
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -33,8 +39,16 @@ public class MemberEntity extends BaseEntity{
 	@Column(length = 15, nullable = false)
 	private String username;
 	
+	@JsonIgnore
 	@Column(length = 100, nullable = false)
 	private String password;
+	
+	@JsonIgnore
+	@Column(columnDefinition = "boolean default true")
+	private boolean activated;
+	
+	@Enumerated(EnumType.STRING)
+	private Role role;
 
 	@Builder
 	public MemberEntity(Long id, String name, String email, String username, String password) {

@@ -1,10 +1,14 @@
 package com.hch;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.jasypt.salt.StringFixedSaltGenerator;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+
 @SpringBootTest
+@EnableEncryptableProperties
 class BoardTestApplicationTests {
 
 	@Test
@@ -30,6 +34,7 @@ class BoardTestApplicationTests {
         StandardPBEStringEncryptor pbeEnc = new StandardPBEStringEncryptor();
         pbeEnc.setAlgorithm("PBEWithMD5AndDES");
         pbeEnc.setPassword(key);
+        pbeEnc.setSaltGenerator(new StringFixedSaltGenerator("someFixedSalt"));
         return pbeEnc.encrypt(value);
     }
 }

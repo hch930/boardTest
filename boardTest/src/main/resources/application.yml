@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ENC(L/QQMCQXCwG+FUtoyzpD67L97za9hODUpbqZaK+WDNooF0PTMWh1loAiSAurWm4K3svCQSPF2f+AveO7hgpmhfZgdhoqFWkUSU1Gk6pr5Ao7ArfG5PPTTQ==)
-    username: ENC(sTs67NhfVVWKPQxy+EafLQ==)
-    password: ENC(aUG1Tnf7Mk8GTxgzX43EAlBVQn7U+R8A)
+    url: jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: cndgus97
     driver-class-name: org.mariadb.jdbc.Driver
   
   devtools:
@@ -43,10 +43,12 @@ logging:
     
 jasypt:
   encryptor:
-    bean: jasyptStringEncryptor          
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    bean: jasyptStringEncryptor
+    algorithm: PBEWithMD5AndDES   
 jwt:
   header: Authorization
-  secret: ENC(7VmCyb0XZtqSidRG2No/SBETuIAtlxUXVDJnxZcEIcvmePOhzBe08niDgcGGoGNNTrrkdOYqBQnRoj3c1LiFSWAvku3K336t)
+  secret: c3ByaW5nLWJvb3Qtc3ByaW5nLXNlY3VyaXR5LWJvYXJkdGVzdC1oY2g5MzAtand0LXNlY3JldC1rZXk=
   token-validity-in-seconds: 86400
 ---
 spring:
